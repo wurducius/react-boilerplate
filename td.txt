@@ -1,2 +1,14 @@
 -cross env reinstall + force version
 -usage of redux-saga
+-clear tests
+-mui add theme
+-mui add baseline
+-add base styles
+-add scripts
+-analyze bundle usage
+-webworker
+-manifest
+-env
+-routes
+-app container
+-prune stores + example store
