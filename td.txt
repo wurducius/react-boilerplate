@@ -1,0 +1,2 @@
+-cross env reinstall + force version
+-usage of redux-saga
