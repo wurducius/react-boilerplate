@@ -1,44 +1,24 @@
-import React, { useEffect } from "react"
-import "./App.css"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import axios from "axios"
-import { Button } from "@mui/material"
+import React from "react"
+import "./styles/base.css"
+import { CssBaseline, ThemeProvider } from "@mui/material"
+import { Helmet, HelmetProvider } from "react-helmet-async"
+import { Provider } from "react-redux"
+import { store } from "./app/store"
+import { theme } from "./styles/theme"
+import { AppRouter } from "./AppRouter"
 
-function App() {
-  useEffect(() => {
-    axios
-      .get("/user?ID=12345")
-      .then(function (response) {
-        // handle success
-        console.log(response)
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error)
-      })
-      .finally(function () {
-        // always executed
-      })
-  }, [])
-
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path={"/x"} element={<>X</>} />
-          <Route
-            path={"/"}
-            element={
-              <>
-                INDEX
-                <Button variant="contained">Hello world</Button>
-              </>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  )
-}
+const App = () => (
+  <HelmetProvider>
+    <Provider store={store}>
+      <Helmet>
+        <title>Hello World</title>
+      </Helmet>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppRouter />
+      </ThemeProvider>
+    </Provider>
+  </HelmetProvider>
+)
 
 export default App
