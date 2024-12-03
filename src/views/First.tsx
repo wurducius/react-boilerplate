@@ -21,6 +21,14 @@ const First = () => {
         >
           Add
         </Button>
+        <Button
+          variant="contained"
+          onClick={() => {
+            dispatch({ type: "USER_FETCH_REQUESTED", payload: { userId: "abc" } })
+          }}
+        >
+          Saga
+        </Button>
         <Link to={"/x"}>To second</Link>
       </Stack>
     </Container>

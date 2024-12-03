@@ -1,4 +1,2 @@
--usage of redux-saga
 -clear tests
 -env
--prune stores + example store
