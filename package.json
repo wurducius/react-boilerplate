@@ -1,16 +1,19 @@
 {
   "name": "react-boilerplate",
   "version": "0.1.0",
+Cl  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "clean": "rimraf build",
     "check": "npx eslint -c eslint.config.mjs .",
     "check-fix": "npx eslint -c eslint.config.mjs --fix .",
     "prettify": "npx prettier --config .prettierrc --write .",
     "lint": "npm run check-fix && npm run prettify",
-    "reinstall": "rd /s /q node_modules && npm i",
+    "reinstall": "rimraf package-lock.json && rimraf node_modules && npm i",
+    "reinstall-f": "rimraf package-lock.json && rimraf node_modules && npm cache clean -f && npm i",
     "analyze": "npx cra-bundle-analyzer"
   },
   "dependencies": {
@@ -39,7 +42,6 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "cra-bundle-analyzer": "^0.1.1",
-    "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
