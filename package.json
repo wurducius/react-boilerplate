@@ -14,7 +14,9 @@
     "lint": "npm run check-fix && npm run prettify",
     "reinstall": "rimraf package-lock.json && rimraf node_modules && npm i",
     "reinstall-f": "rimraf package-lock.json && rimraf node_modules && npm cache clean -f && npm i",
-    "analyze": "npx cra-bundle-analyzer"
+    "analyze": "npx cra-bundle-analyzer",
+    "test-smoke": "node ./scripts/smoke-test.js",
+    "test-lighthouse": "node ./scripts/lighthouse.js"
   },
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
