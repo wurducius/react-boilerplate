@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports,no-undef
-const Config = require("../config").default
+const Config = require("../src/config").default
 
 const BASE_URL = Config.baseUrl + Config.relativeUrl
 const PAGES = [""]
